@@ -28,8 +28,8 @@ RSpec.describe Parser do
 
   context 'when file exists' do
     it 'can open and read log files' do
-      parser = Parser.new
-      parser.parse(testlog)
+      parser = Parser.new(testlog)
+      parser.parse
       expect(File).to have_received(:open)
     end
   end

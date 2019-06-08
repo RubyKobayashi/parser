@@ -11,8 +11,8 @@ require 'parser.rb'
 RSpec.describe 'parser' do
   describe '#parse' do
     it 'parses logs' do
-      parser = Parser.new
-      expect { parser.parse('webserver.log') }.to_not raise_error
+      parser = Parser.new('webserver.log')
+      expect { parser.parse }.to_not raise_error
     end
   end
 end
