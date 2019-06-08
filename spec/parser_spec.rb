@@ -29,6 +29,12 @@ RSpec.describe Parser do
       expect { parser.parse }.to_not raise_error
       expect(File).to have_received(:open)
     end
+
+    it 'outputs webpages ordered from most page views to least' do
+      allow(File).to receive(:open).and_return(content)
+      parser = Parser.new(testlog)
+      expect { parser.parse }.to output("\"/help_page/1 3 visits\"\n\"/about/2 2 visits\"\n\"/about 1 visit\"\n\"/index 1 visit\"\n\"/home 1 visit\"\n\"/contact 1 visit\"\n").to_stdout
+    end
   end
   context 'when file doesnt exists' do
     it 'raises error' do
