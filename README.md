@@ -24,6 +24,12 @@ In terminal run command:
  ```
 
  ```
+ # As a user,
+ # So I know I have a valid file
+ # I want to be notified with an error when the file cannot be read
+ ```
+
+ ```
  As a user,
  So I can see the number of times web pages have been visited
  I want to see a list of webpages ordered from most pages views to less page views

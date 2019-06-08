@@ -22,15 +22,18 @@ RSpec.describe Parser do
   end
   let(:not_a_file) { 'non_file' }
 
-  before do
-    allow(File).to receive(:open).and_return(content)
-  end
-
   context 'when file exists' do
     it 'can open and read log files' do
+      allow(File).to receive(:open).and_return(content)
       parser = Parser.new(testlog)
-      parser.parse
+      expect { parser.parse }.to_not raise_error
       expect(File).to have_received(:open)
+    end
+  end
+  context 'when file doesnt exists' do
+    it 'raises error' do
+      parser = Parser.new(not_a_file)
+      expect { parser.parse }.to raise_error(Errno::ENOENT)
     end
   end
 end
