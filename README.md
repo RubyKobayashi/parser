@@ -1,5 +1,5 @@
 # README
-Parser tech test for Smart Pension
+Parser tech test for Smart Pension: Partial solution
 
 * Ruby version '2.6.0'
 
@@ -13,6 +13,7 @@ To set-up this project on a local machine:
 To run tests:
 In terminal run command:
  'rspec'
+
 
 
  **User Stories:**
@@ -39,6 +40,9 @@ In terminal run command:
   ```
   As a user,
   So I can see the number of unique visits
-  I want to see a list of webpages ordered from most unique visits to less unique visits
-
+  I want to see a list of webpages ordered from most unique visits to least
   ```
+
+  *Approach:**
+  ```
+  In my approach to designing my solution for this tech test, I decided to design a command-line program with output to the terminal. This was done using a strict TDD process and was completed in 2.5 hours. The program has 100% test coverage. Given further time I would have focused on implementing the last feature, the unique views output. 
